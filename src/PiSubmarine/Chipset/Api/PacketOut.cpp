@@ -1,5 +1,6 @@
 #include "PiSubmarine/Chipset/Api/PacketOut.h"
 #include "PiSubmarine/Chipset/Api/Command.h"
+#include <string.h>
 
 namespace PiSubmarine::Chipset::Api
 {

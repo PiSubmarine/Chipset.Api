@@ -1,5 +1,6 @@
 #include "PiSubmarine/Chipset/Api/PacketSetTime.h"
 #include "PiSubmarine/Chipset/Api/Command.h"
+#include <string.h>
 
 namespace PiSubmarine::Chipset::Api
 {
