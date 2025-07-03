@@ -5,7 +5,7 @@ include(FetchContent)
 project(PiSubmarine.Chipset.Api.Test LANGUAGES CXX)
 
 set(PiSubmarine.Chipset.Api.Test.Sources 
-	"PiSubmarine/Chipset/Api/PacketOutTest.cpp")
+	"PiSubmarine/Chipset/Api/PacketOutTest.cpp" "PiSubmarine/Chipset/Api/PacketShutdownTest.cpp")
 
 enable_testing()
 

@@ -7,6 +7,6 @@ namespace PiSubmarine::Chipset::Api
 {
 	TEST(PacketOutTest, Instantiation)
 	{
-
+		PacketOut packet;
 	}
 }

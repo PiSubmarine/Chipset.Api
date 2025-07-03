@@ -1,46 +1,14 @@
 #pragma once
 
+#include <cstdint>
 #include <chrono>
-#include "PiSubmarine/Chipset/Api/MicroVolts.h"
-#include "PiSubmarine/Chipset/Api/MicroAmperes.h"
-#include "PiSubmarine/Chipset/Api/MicroAmpereHours.h"
-#include "PiSubmarine/Chipset/Api/Percentage.h"
 #include "PiSubmarine/Chipset/Api/Crc32Func.h"
 
 namespace PiSubmarine::Chipset::Api
 {
-	enum class StatusFlags : uint64_t
+	class PacketSetTime
 	{
-		VbusConnected = (1 << 0),
-		ChargingInProgress = (1 << 1)
-	};
-
-	class PacketOut
-	{
-	public:
-		/// <summary>
-		/// Chipset time at the beginning of transaction. 0 if time was not set.
-		/// </summary>
-		std::chrono::milliseconds ChipsetTime;
-
-		/// <summary>
-		/// Chipset time at packet creation. 0 if chipset time was not set.
-		/// </summary>
-		std::chrono::milliseconds PacketTime;
-
-		/*
-		MicroVolts BatteryVoltage;
-		MicroAmperes BatteryCurrent;
-		Percentage<8> BatteryStateOfCharge;
-		std::chrono::milliseconds BatteryTimeToEmpty;
-		std::chrono::milliseconds BatteryTimeToFull;
-		*/
-		
-		MicroVolts Reg5Voltage;
-		MicroVolts RegPiVoltage;
-		Percentage<12> BallastAdc;
-		
-		StatusFlags Status;
+		std::chrono::milliseconds RtcTime;
 
 		/// <summary>
 		/// Fills byte buffer with fields values.
