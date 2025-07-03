@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include "PiSubmarine/Chipset/Api/MicroVolts.h"
+#include "PiSubmarine/Chipset/Api/MicroKelvins.h"
 #include "PiSubmarine/Chipset/Api/MicroAmperes.h"
 #include "PiSubmarine/Chipset/Api/MicroAmpereHours.h"
 #include "PiSubmarine/Chipset/Api/Percentage.h"
@@ -43,7 +44,8 @@ namespace PiSubmarine::Chipset::Api
 		MicroVolts Reg5Voltage{ 0 };
 		MicroVolts RegPiVoltage{ 0 };
 		Percentage<12> BallastAdc{ 0 };
-		
+		MicroKelvins ChipsetTemperature{ 0 };
+		MicroKelvins BatchgTemperature{ 0 };
 		
 
 		/// <summary>

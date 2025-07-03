@@ -38,6 +38,14 @@ namespace PiSubmarine::Chipset::Api
 		memcpy(buffer + pos, &ballastAdc, sizeof(ballastAdc));
 		pos += sizeof(ballastAdc);
 
+		uint64_t chipsetTemp = ChipsetTemperature.Get();
+		memcpy(buffer + pos, &chipsetTemp, sizeof(chipsetTemp));
+		pos += sizeof(chipsetTemp);
+
+		uint64_t batchgTemp = BatchgTemp.Get();
+		memcpy(buffer + pos, &batchgTemp, sizeof(batchgTemp));
+		pos += sizeof(batchgTemp);
+
 		uint32_t crc = crcFunc(buffer, pos);
 		memcpy(buffer + pos, &crc, sizeof(crc));
 		pos += sizeof(crc);
@@ -80,6 +88,16 @@ namespace PiSubmarine::Chipset::Api
 		memcpy(&ballastAdc, buffer + pos, sizeof(ballastAdc));
 		pos += sizeof(ballastAdc);
 		BallastAdc = Percentage<12>(ballastAdc);
+
+		uint64_t chipsetTemp = 0;
+		memcpy(&chipsetTemp, buffer + pos, sizeof(chipsetTemp));
+		pos += sizeof(chipsetTemp);
+		ChipsetTemp = MicroKelvins(chipsetTemp);
+
+		uint64_t batchgTemp = 0;
+		memcpy(&batchgTemp, buffer + pos, sizeof(batchgTemp));
+		pos += sizeof(batchgTemp);
+		BatchgTemp = MicroKelvins(batchgTemp);
 
 		uint32_t crcActual = crcFunc(buffer, pos);
 
