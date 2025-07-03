@@ -8,7 +8,10 @@ namespace PiSubmarine::Chipset::Api
 {
 	struct PacketSetTime
 	{
-		std::chrono::milliseconds RtcTime;
+	public:
+		constexpr static size_t Size = 1 + 1 * 8 + 4;
+
+		std::chrono::milliseconds RtcTime{ 0 };
 
 		/// <summary>
 		/// Fills byte buffer with fields values.

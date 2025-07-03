@@ -8,7 +8,10 @@ namespace PiSubmarine::Chipset::Api
 {
 	struct PacketShutdown
 	{
-		std::chrono::milliseconds Delay;
+	public:
+		constexpr static size_t Size = 1 + 1 * 8 + 4;
+
+		std::chrono::milliseconds Delay{ 0 };
 
 		/// <summary>
 		/// Fills byte buffer with fields values.

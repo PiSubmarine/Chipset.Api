@@ -18,17 +18,19 @@ namespace PiSubmarine::Chipset::Api
 	struct PacketOut
 	{
 	public:
+		constexpr static size_t Size = 1 + 6 * 8 + 4;
+
 		/// <summary>
 		/// Chipset time at the beginning of transaction. 0 if time was not set.
 		/// </summary>
-		std::chrono::milliseconds ChipsetTime;
+		std::chrono::milliseconds ChipsetTime{ 0 };
 
 		/// <summary>
 		/// Chipset time at packet creation. 0 if chipset time was not set.
 		/// </summary>
-		std::chrono::milliseconds PacketTime;
+		std::chrono::milliseconds PacketTime{ 0 };
 
-		StatusFlags Status;
+		StatusFlags Status{ 0 };
 
 		/*
 		MicroVolts BatteryVoltage;
@@ -38,9 +40,9 @@ namespace PiSubmarine::Chipset::Api
 		std::chrono::milliseconds BatteryTimeToFull;
 		*/
 		
-		MicroVolts Reg5Voltage;
-		MicroVolts RegPiVoltage;
-		Percentage<12> BallastAdc;
+		MicroVolts Reg5Voltage{ 0 };
+		MicroVolts RegPiVoltage{ 0 };
+		Percentage<12> BallastAdc{ 0 };
 		
 		
 
