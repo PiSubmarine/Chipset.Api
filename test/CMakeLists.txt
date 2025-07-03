@@ -13,7 +13,7 @@ enable_testing()
 find_package(spdlog)
 find_package(gtest)
 
-add_executable(PiSubmarine.Chipset.Api.Test ${PiSubmarine.Chipset.Api.Test.Sources})
+add_executable(PiSubmarine.Chipset.Api.Test ${PiSubmarine.Chipset.Api.Test.Sources} "PiSubmarine/Chipset/Api/PacketSetTimeTest.cpp")
 target_compile_features(PiSubmarine.Chipset.Api.Test PRIVATE cxx_std_23)
 target_link_libraries(PiSubmarine.Chipset.Api.Test PRIVATE PiSubmarine.Chipset.Api)
 target_link_libraries(PiSubmarine.Chipset.Api.Test PRIVATE spdlog::spdlog)

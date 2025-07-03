@@ -6,7 +6,7 @@
 
 namespace PiSubmarine::Chipset::Api
 {
-	class PacketSetTime
+	struct PacketSetTime
 	{
 		std::chrono::milliseconds RtcTime;
 

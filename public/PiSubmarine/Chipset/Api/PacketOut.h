@@ -15,7 +15,7 @@ namespace PiSubmarine::Chipset::Api
 		ChargingInProgress = (1 << 1)
 	};
 
-	class PacketOut
+	struct PacketOut
 	{
 	public:
 		/// <summary>
@@ -27,6 +27,8 @@ namespace PiSubmarine::Chipset::Api
 		/// Chipset time at packet creation. 0 if chipset time was not set.
 		/// </summary>
 		std::chrono::milliseconds PacketTime;
+
+		StatusFlags Status;
 
 		/*
 		MicroVolts BatteryVoltage;
@@ -40,7 +42,7 @@ namespace PiSubmarine::Chipset::Api
 		MicroVolts RegPiVoltage;
 		Percentage<12> BallastAdc;
 		
-		StatusFlags Status;
+		
 
 		/// <summary>
 		/// Fills byte buffer with fields values.
