@@ -19,7 +19,7 @@ namespace PiSubmarine::Chipset::Api
 	struct PacketOut
 	{
 	public:
-		constexpr static size_t Size = 1 + 6 * 8 + 4;
+		constexpr static size_t Size = 1 + 7 * 8 + 4;
 
 		/// <summary>
 		/// Chipset time at the beginning of transaction. 0 if time was not set.
@@ -27,9 +27,14 @@ namespace PiSubmarine::Chipset::Api
 		std::chrono::milliseconds ChipsetTime{ 0 };
 
 		/// <summary>
-		/// Chipset time at packet creation. 0 if chipset time was not set.
+		/// Chipset time at ADC completion. 0 if chipset time was not set.
 		/// </summary>
-		std::chrono::milliseconds PacketTime{ 0 };
+		std::chrono::milliseconds AdcTime{ 0 };
+
+		/// <summary>
+		/// Chipset time at BATCHG reply reception. 0 if chipset time was not set.
+		/// </summary>
+		std::chrono::milliseconds BatchgTime{ 0 };
 
 		StatusFlags Status{ 0 };
 

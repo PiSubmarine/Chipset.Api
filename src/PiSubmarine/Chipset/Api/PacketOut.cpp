@@ -18,9 +18,13 @@ namespace PiSubmarine::Chipset::Api
 		memcpy(buffer + pos, &chipsetTime, sizeof(chipsetTime));
 		pos += sizeof(chipsetTime);
 
-		uint64_t packetTime = PacketTime.count();
-		memcpy(buffer + pos, &packetTime, sizeof(packetTime));
-		pos += sizeof(packetTime);
+		uint64_t adcTime = AdcTime.count();
+		memcpy(buffer + pos, &adcTime, sizeof(adcTime));
+		pos += sizeof(adcTime);
+
+		uint64_t batchgTime = BatchgTime.count();
+		memcpy(buffer + pos, &batchgTime, sizeof(batchgTime));
+		pos += sizeof(batchgTime);
 
 		uint64_t status = static_cast<uint64_t>(Status);
 		memcpy(buffer + pos, &status, sizeof(status));
@@ -66,10 +70,15 @@ namespace PiSubmarine::Chipset::Api
 		pos += sizeof(chipsetTime);
 		ChipsetTime = std::chrono::milliseconds(chipsetTime);
 
-		uint64_t packetTime = 0;
-		memcpy(&packetTime, buffer + pos, sizeof(packetTime));
-		pos += sizeof(packetTime);
-		PacketTime = std::chrono::milliseconds(packetTime);
+		uint64_t adcTime = 0;
+		memcpy(&adcTime, buffer + pos, sizeof(adcTime));
+		pos += sizeof(adcTime);
+		AdcTime = std::chrono::milliseconds(adcTime);
+
+		uint64_t batchgTime = 0;
+		memcpy(&batchgTime, buffer + pos, sizeof(batchgTime));
+		pos += sizeof(batchgTime);
+		BatchgTime = std::chrono::milliseconds(batchgTime);
 
 		memcpy(&Status, buffer + pos, sizeof(Status));
 		pos += sizeof(Status);
