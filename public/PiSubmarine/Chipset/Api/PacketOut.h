@@ -19,7 +19,7 @@ namespace PiSubmarine::Chipset::Api
 	struct PacketOut
 	{
 	public:
-		constexpr static size_t Size = 1 + 7 * 8 + 4;
+		constexpr static size_t Size = 1 + 9 * 8 + 4;
 
 		/// <summary>
 		/// Chipset time at the beginning of transaction. 0 if time was not set.

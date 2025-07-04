@@ -6,7 +6,7 @@ namespace PiSubmarine::Chipset::Api
 {
 	size_t PacketOut::Serialize(uint8_t* buffer, size_t bufferLength, Crc32Func crcFunc) const
 	{
-		if (bufferLength < 1 + 8 + 4)
+		if (bufferLength < Size)
 		{
 			return 0;
 		}

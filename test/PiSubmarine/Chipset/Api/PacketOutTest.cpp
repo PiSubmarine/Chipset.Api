@@ -12,10 +12,10 @@ namespace PiSubmarine::Chipset::Api
 		Stm32Crc crcProvider;
 		Crc32Func crcFunc = [crcProvider](const uint8_t* data, size_t len) {return crcProvider.Calculate(data, len); };
 
-
 		PacketOut packet;
 		packet.ChipsetTime = std::chrono::milliseconds(0xABCD);
-		packet.PacketTime = std::chrono::milliseconds(0x0102);
+		packet.AdcTime = std::chrono::milliseconds(0x0102);
+		packet.BatchgTime = std::chrono::milliseconds(0x0304);
 		packet.Status = StatusFlags::VbusConnected;
 		packet.Reg5Voltage = MicroVolts(0x123456);
 		packet.RegPiVoltage = MicroVolts(0x789ABC);
@@ -30,7 +30,8 @@ namespace PiSubmarine::Chipset::Api
 		ASSERT_TRUE(deserializationOk);
 
 		EXPECT_EQ(packet.ChipsetTime, deserialized.ChipsetTime);
-		EXPECT_EQ(packet.PacketTime, deserialized.PacketTime);
+		EXPECT_EQ(packet.AdcTime, deserialized.AdcTime);
+		EXPECT_EQ(packet.BatchgTime, deserialized.BatchgTime);
 		EXPECT_EQ(packet.Status, deserialized.Status);
 		EXPECT_EQ(packet.Reg5Voltage, deserialized.Reg5Voltage);
 		EXPECT_EQ(packet.RegPiVoltage, deserialized.RegPiVoltage);
