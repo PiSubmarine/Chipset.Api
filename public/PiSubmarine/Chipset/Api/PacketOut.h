@@ -13,28 +13,20 @@ namespace PiSubmarine::Chipset::Api
 	enum class StatusFlags : uint64_t
 	{
 		VbusConnected = (1 << 0),
-		ChargingInProgress = (1 << 1)
+		ChargingInProgress = (1 << 1),
+		AdcValid = (1 << 2),
+		BatchgValid = (1 << 3)
 	};
 
 	struct PacketOut
 	{
 	public:
-		constexpr static size_t Size = 1 + 9 * 8 + 4;
+		constexpr static size_t Size = 1 + 7 * 8 + 4;
 
 		/// <summary>
 		/// Chipset time at the beginning of transaction. 0 if time was not set.
 		/// </summary>
 		std::chrono::milliseconds ChipsetTime{ 0 };
-
-		/// <summary>
-		/// Chipset time at ADC completion. 0 if chipset time was not set.
-		/// </summary>
-		std::chrono::milliseconds AdcTime{ 0 };
-
-		/// <summary>
-		/// Chipset time at BATCHG reply reception. 0 if chipset time was not set.
-		/// </summary>
-		std::chrono::milliseconds BatchgTime{ 0 };
 
 		StatusFlags Status{ 0 };
 
