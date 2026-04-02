@@ -20,7 +20,7 @@ namespace PiSubmarine::Chipset::Api
 
 		constexpr double ToFactor() const noexcept
 		{
-			return static_cast<double>(Value) / (1 << Base - 1);
+			return static_cast<double>(Value) / (1 << (Base - 1));
 		}
 
 
