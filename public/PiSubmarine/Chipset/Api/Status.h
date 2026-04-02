@@ -1,12 +1,15 @@
 #pragma once
 
+#include <cstdint>
+
 namespace PiSubmarine::Chipset::Api
 {
     enum class Status : uint32_t
     {
+        TestBit,
         VBusConnected,
         ChargingInProgress,
-
-        TestBit = 31
+        ChargerOvercurrent,
+        ChargerOverheat
     };
 }
