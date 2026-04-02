@@ -5,7 +5,8 @@ include(FetchContent)
 project(PiSubmarine.Chipset.Api.Test LANGUAGES CXX)
 
 set(PiSubmarine.Chipset.Api.Test.Sources 
-	"PiSubmarine/Chipset/Api/PacketOutTest.cpp" "PiSubmarine/Chipset/Api/PacketShutdownTest.cpp")
+	"PiSubmarine/Chipset/Api/ConvertTest.cpp"
+)
 
 enable_testing()
 
@@ -13,7 +14,8 @@ enable_testing()
 find_package(spdlog)
 find_package(GTest)
 
-add_executable(PiSubmarine.Chipset.Api.Test ${PiSubmarine.Chipset.Api.Test.Sources} "PiSubmarine/Chipset/Api/PacketSetTimeTest.cpp")
+add_executable(PiSubmarine.Chipset.Api.Test ${PiSubmarine.Chipset.Api.Test.Sources})
+PiSubmarineInitTarget(PiSubmarine.Chipset.Api.Test)
 target_compile_features(PiSubmarine.Chipset.Api.Test PRIVATE cxx_std_23)
 target_link_libraries(PiSubmarine.Chipset.Api.Test PRIVATE PiSubmarine.Chipset.Api)
 target_link_libraries(PiSubmarine.Chipset.Api.Test PRIVATE spdlog::spdlog)
