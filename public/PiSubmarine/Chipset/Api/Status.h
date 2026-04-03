@@ -10,6 +10,7 @@ namespace PiSubmarine::Chipset::Api
         VBusConnected,
         ChargingInProgress,
         ChargerOvercurrent,
-        ChargerOverheat
+        ChargerOverheat,
+        Reg12PowerGood
     };
 }
