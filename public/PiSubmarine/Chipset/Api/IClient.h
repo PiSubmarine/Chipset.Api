@@ -25,7 +25,7 @@ namespace PiSubmarine::Chipset
 
         virtual std::expected<Api::Status, Status> GetStatus() const = 0;
 
-        virtual std::expected<std::chrono::milliseconds, Status> GetRtc() = 0;
+        virtual std::expected<std::chrono::seconds, Status> GetRtc() = 0;
         virtual Status SetRtc(const std::chrono::milliseconds& timestamp) = 0;
         virtual std::expected<Volts, Status> GetRegulator5Voltage() = 0;
         virtual std::expected<Volts, Status> GetRegulatorPiVoltage() = 0;
