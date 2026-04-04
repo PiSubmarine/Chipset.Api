@@ -7,6 +7,7 @@ add_library(PiSubmarine.Chipset.Api
 	"../public/PiSubmarine/Chipset/Api/Register.h"
 	"../public/PiSubmarine/Chipset/Api/Command.h"
 	"../public/PiSubmarine/Chipset/Api/Convert.h"
+	"../public/PiSubmarine/Chipset/Api/IClient.h"
 		PiSubmarine/Chipset/Api/Convert.cpp
 )
 PiSubmarineInitTarget(PiSubmarine.Chipset.Api)
