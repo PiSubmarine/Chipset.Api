@@ -9,7 +9,7 @@
 #include "Command.h"
 #include "PiSubmarine/NormalizedFraction.h"
 
-namespace PiSubmarine::Chipset::Client
+namespace PiSubmarine::Chipset
 {
     class IClient
     {
