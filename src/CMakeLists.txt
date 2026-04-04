@@ -9,6 +9,7 @@ add_library(PiSubmarine.Chipset.Api
 	"../public/PiSubmarine/Chipset/Api/Convert.h"
 	"../public/PiSubmarine/Chipset/Api/IClient.h"
 		PiSubmarine/Chipset/Api/Convert.cpp
+		../public/PiSubmarine/Chipset/Api/Address.h
 )
 PiSubmarineInitTarget(PiSubmarine.Chipset.Api)
 target_include_directories(PiSubmarine.Chipset.Api PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../public")

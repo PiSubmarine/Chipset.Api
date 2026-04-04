@@ -16,7 +16,7 @@ namespace PiSubmarine::Chipset::Api
 
     std::pair<uint32_t, uint32_t> SecondsToRtc(const std::chrono::seconds& rtc)
     {
-        return std::make_pair(rtc.count() >> 32, rtc.count());
+        return std::make_pair(static_cast<uint32_t>(rtc.count() >> 32ULL), static_cast<uint32_t>(rtc.count()));
     }
 
     Volts RegulatorToVolts(uint32_t reg)
