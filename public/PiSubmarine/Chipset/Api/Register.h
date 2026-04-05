@@ -18,6 +18,12 @@ namespace PiSubmarine::Chipset::Api
         BallastPosition,
         ChipsetTemperature,
         ChargerTemperature,
+        ChargerBusCurrent,
+        BatteryCurrent,
+        ChargerBusVoltage,
+        BatteryVoltage,
+        ChargerSystemVoltage,
+        BatteryTemperature,
 
         Command
     };

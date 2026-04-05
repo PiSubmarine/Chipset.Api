@@ -34,6 +34,13 @@ namespace PiSubmarine::Chipset
         virtual std::expected<Celsius, Status> GetChipsetTemperature() = 0;
         virtual std::expected<Celsius, Status> GetChargerTemperature() = 0;
 
+        virtual std::expected<Celsius, Status> GetChargerBusCurrent() = 0;
+        virtual std::expected<Celsius, Status> GetBatteryCurrent() = 0;
+        virtual std::expected<Celsius, Status> GetChargerBusVoltage() = 0;
+        virtual std::expected<Celsius, Status> GetBatteryVoltage() = 0;
+        virtual std::expected<Celsius, Status> GetChargerSystemVoltage() = 0;
+        virtual std::expected<Celsius, Status> GetBatteryTemperature() = 0;
+
         virtual Status SendCommand(Api::Command command) = 0;
 
     };
