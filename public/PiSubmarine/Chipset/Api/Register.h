@@ -12,7 +12,7 @@ namespace PiSubmarine::Chipset::Api
         Status = 0x00,
         RtcHigh,
         RtcLow,
-        ChipsetVdd,
+        ChipsetVoltage,
         Reg5Voltage,
         RegPiVoltage,
         BallastPosition,
