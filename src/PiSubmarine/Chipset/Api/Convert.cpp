@@ -34,7 +34,7 @@ namespace PiSubmarine::Chipset::Api
         return NormalizedIntFraction<12>(ballastPosition);
     }
 
-    Celsius ConvertToCelcius(uint32_t temperature)
+    Celsius ConvertToCelsius(uint32_t temperature)
     {
         return Celsius(static_cast<double>(temperature) / 1'000'000 - 273.15);
     }
