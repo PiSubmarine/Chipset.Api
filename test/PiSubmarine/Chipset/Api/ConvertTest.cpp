@@ -13,8 +13,8 @@ namespace PiSubmarine::Chipset::Api
 		auto duration_since_epoch = rtc.time_since_epoch();
 		auto sec = std::chrono::duration_cast<std::chrono::seconds>(duration_since_epoch);
 
-		auto[rtcHigh, rtcLow] = SecondsToRtc(sec);
-		auto rtcRestored = RtcToSeconds(rtcHigh, rtcLow);
+		auto[rtcHigh, rtcLow] = ConvertSecondsToRtc(sec);
+		auto rtcRestored = ConvertRtcToSeconds(rtcHigh, rtcLow);
 		EXPECT_EQ(rtcRestored, sec);
 	}
 }
