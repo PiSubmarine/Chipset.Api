@@ -24,6 +24,11 @@ namespace PiSubmarine::Chipset::Api
         return Volts(static_cast<double>(reg) /  1'000'000);
     }
 
+    Amperes ConvertToAmperes(uint32_t reg)
+    {
+        return Amperes(static_cast<double>(reg) /  1'000'000);
+    }
+
     NormalizedIntFraction<12> ConvertToIntFraction(uint32_t ballastPosition)
     {
         return NormalizedIntFraction<12>(ballastPosition);
