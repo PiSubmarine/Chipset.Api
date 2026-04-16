@@ -19,3 +19,6 @@ target_link_libraries(PiSubmarine.Chipset.Api PUBLIC PiSubmarine.RegUtils)
 
 PiSubmarineAddDependency("https://github.com/PiSubmarine/Units" "")
 target_link_libraries(PiSubmarine.Chipset.Api PUBLIC PiSubmarine.Units)
+
+PiSubmarineAddDependency("https://github.com/PiSubmarine/Error.Api.git" "")
+target_link_libraries(PiSubmarine.Chipset.Api PUBLIC PiSubmarine.Error.Api)
